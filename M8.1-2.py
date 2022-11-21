@@ -2,13 +2,13 @@ import sqlite3
 conn = sqlite3.connect('M8.sqlite')
 cursor = conn.cursor()
 
-cursor.execute("CREATE TABLE IF NOT EXISTS Students (id INTEGER PRIMARY KEY, name varchar(32), surname varchar(32), age integer, city varchar(32))")
-cursor.execute("CREATE TABLE IF NOT EXISTS Courses (id INTEGER PRIMARY KEY, name varchar(32), time_start varchar(32), time_end varchar(32))")
-cursor.execute("CREATE TABLE IF NOT EXISTS Student_Courses (student_id integer, courses_id integer, FOREIGN KEY(student_id) REFERENCES Students(id), FOREIGN KEY(courses_id) REFERENCES Courses(id))")
+# cursor.execute("CREATE TABLE IF NOT EXISTS Students (id INTEGER PRIMARY KEY, name varchar(32), surname varchar(32), age integer, city varchar(32))")
+# cursor.execute("CREATE TABLE IF NOT EXISTS Courses (id INTEGER PRIMARY KEY, name varchar(32), time_start varchar(32), time_end varchar(32))")
+# cursor.execute("CREATE TABLE IF NOT EXISTS Student_Courses (student_id integer, courses_id integer, FOREIGN KEY(student_id) REFERENCES Students(id), FOREIGN KEY(courses_id) REFERENCES Courses(id))")
 
-cursor.executemany("INSERT INTO Students (id, name, surname, age, city) VALUES (?, ?, ?, ?, ?)", [(1, 'Max', 'Brooks', 24, 'Spb'), (2, 'John', 'Stones', 15, 'Spb'), (3, 'Andy', 'Wings', 45, 'Manhester'), (4, 'Kate', 'Brooks', 34, 'Spb')])
-cursor.executemany("INSERT INTO Courses (id, name, time_start, time_end) VALUES (?, ?, ?, ?)", [(1, 'python', '21.07.21', '21.08.21'), (2, 'java', '13.07.21', '16.08.21')])
-cursor.executemany("INSERT INTO Student_Courses (student_id, courses_id) VALUES (?, ?)", [(1, 1), (2, 1), (3, 1), (4, 2)])
+# cursor.executemany("INSERT INTO Students (id, name, surname, age, city) VALUES (?, ?, ?, ?, ?)", [(1, 'Max', 'Brooks', 24, 'Spb'), (2, 'John', 'Stones', 15, 'Spb'), (3, 'Andy', 'Wings', 45, 'Manhester'), (4, 'Kate', 'Brooks', 34, 'Spb')])
+# cursor.executemany("INSERT INTO Courses (id, name, time_start, time_end) VALUES (?, ?, ?, ?)", [(1, 'python', '21.07.21', '21.08.21'), (2, 'java', '13.07.21', '16.08.21')])
+# cursor.executemany("INSERT INTO Student_Courses (student_id, courses_id) VALUES (?, ?)", [(1, 1), (2, 1), (3, 1), (4, 2)])
 
 conn.commit()
 
