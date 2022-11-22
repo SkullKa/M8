@@ -67,7 +67,8 @@ for student in query:
     print(student.name)
 print('\n')
 
-query2 = Students.select().join(Student_Courses).join(Courses).where((Students.city == "Spb") and (Courses.name == "python"))
+# query2 = Students.select().join(Student_Courses).join(Courses).where((Students.city == "Spb") and (Courses.name == "python"))
+query2 = Students.select().join(Student_Courses).join(Courses).where((Students.city == "Spb") & (Courses.name == "python"))
 for student in query2:
     print(student.name)
 
